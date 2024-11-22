@@ -52,15 +52,40 @@
         ul li {
             margin: 0.5rem 0;
         }
-        ul li a {
-            text-decoration: none;
-            color: #2563eb;
-            font-weight: 500;
+        ul li.folder > a {
+            font-weight: 600;
+            color: #111827;
+            cursor: pointer;
         }
-        ul li a:hover {
+        ul li.folder ul {
+            display: none; /* Hide by default */
+            margin-left: 1.5rem;
+        }
+        ul li.folder.open ul {
+            display: block; /* Show when folder is open */
+        }
+        ul li.asset {
+            margin-left: 1.5rem;
+        }
+        ul li.asset a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        ul li.asset a:hover {
             text-decoration: underline;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('li.folder > a').forEach(function (folderLink) {
+                folderLink.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const folder = e.target.parentElement;
+                    folder.classList.toggle('open');
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -68,34 +93,86 @@
         <h1>Brand Assets</h1>
     </header>
     <main>
-        <section>
-            <h2>PNG</h2>
-            <ul>
-                <li><a href="PNG/amplemarket-app-icon.png">amplemarket-app-icon.png</a></li>
-                <li><a href="PNG/amplemarket-full-black-combination-mark.png">amplemarket-full-black-combination-mark.png</a></li>
-                <li><a href="PNG/amplemarket-full-black-logomark.png">amplemarket-full-black-logomark.png</a></li>
-                <li><a href="PNG/amplemarket-icon-circle-frame-adjustment.png">amplemarket-icon-circle-frame-adjustment.png</a></li>
-                <li><a href="PNG/amplemarket-icon.png">amplemarket-icon.png</a></li>
-                <li><a href="PNG/amplemarket-official-combination-mark.png">amplemarket-official-combination-mark.png</a></li>
-                <li><a href="PNG/amplemarket-official-logomark.png">amplemarket-official-logomark.png</a></li>
-                <li><a href="PNG/amplemarket-white-combination-mark.png">amplemarket-white-combination-mark.png</a></li>
-                <li><a href="PNG/amplemarket-white-logomark.png">amplemarket-white-logomark.png</a></li>
-            </ul>
-        </section>
-        <section>
-            <h2>SVG</h2>
-            <ul>
-                <li><a href="SVG/amplemarket-app-icon.svg">amplemarket-app-icon.svg</a></li>
-                <li><a href="SVG/amplemarket-full-black-combination-mark.svg">amplemarket-full-black-combination-mark.svg</a></li>
-                <li><a href="SVG/amplemarket-full-black-logomark.svg">amplemarket-full-black-logomark.svg</a></li>
-                <li><a href="SVG/amplemarket-icon-circle-frame-adjustment.svg">amplemarket-icon-circle-frame-adjustment.svg</a></li>
-                <li><a href="SVG/amplemarket-icon.svg">amplemarket-icon.svg</a></li>
-                <li><a href="SVG/amplemarket-official-combination-mark.svg">amplemarket-official-combination-mark.svg</a></li>
-                <li><a href="SVG/amplemarket-official-logomark.svg">amplemarket-official-logomark.svg</a></li>
-                <li><a href="SVG/amplemarket-white-combination-mark.svg">amplemarket-white-combination-mark.svg</a></li>
-                <li><a href="SVG/amplemarket-white-logomark.svg">amplemarket-white-logomark.svg</a></li>
-            </ul>
-        </section>
-    </main>
+<section>
+<h2>PNG</h2>
+<ul>
+    <li class="asset"><a href="PNG/amplemarket-app-icon_2048w_2048h.png">amplemarket-app-icon_2048w_2048h.png</a></li>
+    <li class="asset"><a href="PNG/amplemarket-full-black-combination-mark_15646w_2048h.png">amplemarket-full-black-combination-mark_15646w_2048h.png</a></li>
+    <li class="asset"><a href="PNG/amplemarket-full-black-logomark_2554w_2048h.png">amplemarket-full-black-logomark_2554w_2048h.png</a></li>
+    <li class="asset"><a href="PNG/amplemarket-icon-circle-frame-adjustment_2048w_2048h.png">amplemarket-icon-circle-frame-adjustment_2048w_2048h.png</a></li>
+    <li class="asset"><a href="PNG/amplemarket-icon_2048w_2048h.png">amplemarket-icon_2048w_2048h.png</a></li>
+    <li class="asset"><a href="PNG/amplemarket-official-combination-mark_15646w_2048h.png">amplemarket-official-combination-mark_15646w_2048h.png</a></li>
+    <li class="asset"><a href="PNG/amplemarket-official-logomark_2554w_2048h.png">amplemarket-official-logomark_2554w_2048h.png</a></li>
+    <li class="asset"><a href="PNG/amplemarket-white-combination-mark_15683w_2048h.png">amplemarket-white-combination-mark_15683w_2048h.png</a></li>
+    <li class="asset"><a href="PNG/amplemarket-white-logomark_2560w_2048h.png">amplemarket-white-logomark_2560w_2048h.png</a></li>
+    <li class="folder"><a href="#">extra-small/</a>
+        <ul>
+            <li class="asset"><a href="PNG/extra-small/amplemarket-app-icon_40w_40h.png">amplemarket-app-icon_40w_40h.png</a></li>
+            <li class="asset"><a href="PNG/extra-small/amplemarket-full-black-combination-mark_312w_40h.png">amplemarket-full-black-combination-mark_312w_40h.png</a></li>
+            <li class="asset"><a href="PNG/extra-small/amplemarket-full-black-logomark_51w_40h.png">amplemarket-full-black-logomark_51w_40h.png</a></li>
+            <li class="asset"><a href="PNG/extra-small/amplemarket-icon-circle-frame-adjustment_40w_40h.png">amplemarket-icon-circle-frame-adjustment_40w_40h.png</a></li>
+            <li class="asset"><a href="PNG/extra-small/amplemarket-icon_40w_40h.png">amplemarket-icon_40w_40h.png</a></li>
+            <li class="asset"><a href="PNG/extra-small/amplemarket-official-combination-mark_312w_40h.png">amplemarket-official-combination-mark_312w_40h.png</a></li>
+            <li class="asset"><a href="PNG/extra-small/amplemarket-official-logomark_51w_40h.png">amplemarket-official-logomark_51w_40h.png</a></li>
+            <li class="asset"><a href="PNG/extra-small/amplemarket-white-combination-mark_313w_40h.png">amplemarket-white-combination-mark_313w_40h.png</a></li>
+            <li class="asset"><a href="PNG/extra-small/amplemarket-white-logomark_51w_40h.png">amplemarket-white-logomark_51w_40h.png</a></li>
+        </ul>
+    </li>
+    <li class="folder"><a href="#">small/</a>
+        <ul>
+            <li class="asset"><a href="PNG/small/amplemarket-app-icon_204w_204h.png">amplemarket-app-icon_204w_204h.png</a></li>
+            <li class="asset"><a href="PNG/small/amplemarket-full-black-combination-mark_1564w_204h.png">amplemarket-full-black-combination-mark_1564w_204h.png</a></li>
+            <li class="asset"><a href="PNG/small/amplemarket-full-black-logomark_255w_204h.png">amplemarket-full-black-logomark_255w_204h.png</a></li>
+            <li class="asset"><a href="PNG/small/amplemarket-icon-circle-frame-adjustment_204w_204h.png">amplemarket-icon-circle-frame-adjustment_204w_204h.png</a></li>
+            <li class="asset"><a href="PNG/small/amplemarket-icon_204w_204h.png">amplemarket-icon_204w_204h.png</a></li>
+            <li class="asset"><a href="PNG/small/amplemarket-official-combination-mark_1564w_204h.png">amplemarket-official-combination-mark_1564w_204h.png</a></li>
+            <li class="asset"><a href="PNG/small/amplemarket-official-logomark_255w_204h.png">amplemarket-official-logomark_255w_204h.png</a></li>
+            <li class="asset"><a href="PNG/small/amplemarket-white-combination-mark_1568w_204h.png">amplemarket-white-combination-mark_1568w_204h.png</a></li>
+            <li class="asset"><a href="PNG/small/amplemarket-white-logomark_256w_204h.png">amplemarket-white-logomark_256w_204h.png</a></li>
+        </ul>
+    </li>
+    <li class="folder"><a href="#">medium/</a>
+        <ul>
+            <li class="asset"><a href="PNG/medium/amplemarket-app-icon_614w_614h.png">amplemarket-app-icon_614w_614h.png</a></li>
+            <li class="asset"><a href="PNG/medium/amplemarket-full-black-combination-mark_4693w_614h.png">amplemarket-full-black-combination-mark_4693w_614h.png</a></li>
+            <li class="asset"><a href="PNG/medium/amplemarket-full-black-logomark_766w_614h.png">amplemarket-full-black-logomark_766w_614h.png</a></li>
+            <li class="asset"><a href="PNG/medium/amplemarket-icon-circle-frame-adjustment_614w_614h.png">amplemarket-icon-circle-frame-adjustment_614w_614h.png</a></li>
+            <li class="asset"><a href="PNG/medium/amplemarket-icon_614w_614h.png">amplemarket-icon_614w_614h.png</a></li>
+            <li class="asset"><a href="PNG/medium/amplemarket-official-combination-mark_4693w_614h.png">amplemarket-official-combination-mark_4693w_614h.png</a></li>
+            <li class="asset"><a href="PNG/medium/amplemarket-official-logomark_766w_614h.png">amplemarket-official-logomark_766w_614h.png</a></li>
+            <li class="asset"><a href="PNG/medium/amplemarket-white-combination-mark_4704w_614h.png">amplemarket-white-combination-mark_4704w_614h.png</a></li>
+            <li class="asset"><a href="PNG/medium/amplemarket-white-logomark_768w_614h.png">amplemarket-white-logomark_768w_614h.png</a></li>
+        </ul>
+    </li>
+    <li class="folder"><a href="#">large/</a>
+        <ul>
+            <li class="asset"><a href="PNG/large/amplemarket-app-icon_1024w_1024h.png">amplemarket-app-icon_1024w_1024h.png</a></li>
+            <li class="asset"><a href="PNG/large/amplemarket-full-black-combination-mark_7823w_1024h.png">amplemarket-full-black-combination-mark_7823w_1024h.png</a></li>
+            <li class="asset"><a href="PNG/large/amplemarket-full-black-logomark_1277w_1024h.png">amplemarket-full-black-logomark_1277w_1024h.png</a></li>
+            <li class="asset"><a href="PNG/large/amplemarket-icon-circle-frame-adjustment_1024w_1024h.png">amplemarket-icon-circle-frame-adjustment_1024w_1024h.png</a></li>
+            <li class="asset"><a href="PNG/large/amplemarket-icon_1024w_1024h.png">amplemarket-icon_1024w_1024h.png</a></li>
+            <li class="asset"><a href="PNG/large/amplemarket-official-combination-mark_7823w_1024h.png">amplemarket-official-combination-mark_7823w_1024h.png</a></li>
+            <li class="asset"><a href="PNG/large/amplemarket-official-logomark_1277w_1024h.png">amplemarket-official-logomark_1277w_1024h.png</a></li>
+            <li class="asset"><a href="PNG/large/amplemarket-white-combination-mark_7841w_1024h.png">amplemarket-white-combination-mark_7841w_1024h.png</a></li>
+            <li class="asset"><a href="PNG/large/amplemarket-white-logomark_1280w_1024h.png">amplemarket-white-logomark_1280w_1024h.png</a></li>
+        </ul>
+    </li>
+</ul>
+</section>
+<section>
+<h2>SVG</h2>
+<ul>
+    <li class="asset"><a href="SVG/amplemarket-app-icon.svg">amplemarket-app-icon.svg</a></li>
+    <li class="asset"><a href="SVG/amplemarket-full-black-combination-mark.svg">amplemarket-full-black-combination-mark.svg</a></li>
+    <li class="asset"><a href="SVG/amplemarket-full-black-logomark.svg">amplemarket-full-black-logomark.svg</a></li>
+    <li class="asset"><a href="SVG/amplemarket-icon-circle-frame-adjustment.svg">amplemarket-icon-circle-frame-adjustment.svg</a></li>
+    <li class="asset"><a href="SVG/amplemarket-icon.svg">amplemarket-icon.svg</a></li>
+    <li class="asset"><a href="SVG/amplemarket-official-combination-mark.svg">amplemarket-official-combination-mark.svg</a></li>
+    <li class="asset"><a href="SVG/amplemarket-official-logomark.svg">amplemarket-official-logomark.svg</a></li>
+    <li class="asset"><a href="SVG/amplemarket-white-combination-mark.svg">amplemarket-white-combination-mark.svg</a></li>
+    <li class="asset"><a href="SVG/amplemarket-white-logomark.svg">amplemarket-white-logomark.svg</a></li>
+</ul>
+</section>
+</main>
 </body>
 </html>
